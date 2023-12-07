@@ -1,0 +1,114 @@
+[
+    {
+        "component": "Button",
+        "path": "/button"
+    },
+    {
+        "component": "Input",
+        "path": "/input"
+    },
+    {
+        "component": "Select",
+        "path": "/select"
+    },
+    {
+        "component": "Radio",
+        "path": "/radio"
+    },
+    {
+        "component": "Checkbox",
+        "path": "/checkbox"
+    },
+    {
+        "component": "Switch",
+        "path": "/switch"
+    },
+    {
+        "component": "DatePicker",
+        "path": "/date-picker"
+    },
+    {
+        "component": "TimePicker",
+        "path": "/time-picker"
+    },
+    {
+        "component": "DateTimePicker",
+        "path": "/date-time-picker"
+    },
+    {
+        "component": "Upload",
+        "path": "/upload"
+    },
+    {
+        "component": "Form",
+        "path": "/form"
+    },
+    {
+        "component": "Table",
+        "path": "/table"
+    },
+    {
+        "component": "Tree",
+        "path": "/tree"
+    },
+    {
+        "component": "Tabs",
+        "path": "/tabs"
+    },
+    {
+        "component": "Modal",
+        "path": "/modal"
+    },
+    {
+        "component": "Message",
+        "path": "/message"
+    },
+    {
+        "component": "Notification",
+        "path": "/notification"
+    },
+    {
+        "component": "Progress",
+        "path": "/progress"
+    },
+    {
+        "component": "Loading",
+        "path": "/loading"
+    },
+    {
+        "component": "Icon",
+        "path": "/icon"
+    },
+    {
+        "component": "Menu",
+        "path": "/menu"
+    },
+    {
+        "component": "Breadcrumb",
+        "path": "/breadcrumb"
+    },
+    {
+        "component": "Dropdown",
+        "path": "/dropdown"
+    },
+    {
+        "component": "Steps",
+        "path": "/steps"
+    },
+    {
+        "component": "Carousel",
+        "path": "/carousel"
+    },
+    {
+        "component": "Collapse",
+        "path": "/collapse"
+    },
+    {
+        "component": "Cascader",
+        "path": "/cascader"
+    },
+    {
+        "component": "Transfer",
+        "path": "/transfer"
+    }
+]
