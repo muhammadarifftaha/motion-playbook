@@ -21,11 +21,14 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={cn(inter.className, "flex flex-row")}>
+            <body
+                className={cn(
+                    inter.className,
+                    "flex flex-row overflow-x-hidden justify-start items-start relative"
+                )}
+            >
                 <SideNav />
-                <div className="flex flex-auto justify-start items-center min-h-screen">
-                    {children}
-                </div>
+                {children}
             </body>
         </html>
     );

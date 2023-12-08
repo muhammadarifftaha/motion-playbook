@@ -1,14 +1,16 @@
 import React from "react";
-import components from "@/components";
-import { keys } from "lodash";
+import components from "@/components/index";
+import { capitalize, keys } from "lodash";
 import CodeBlock from "@/components/ui/CodeBlock";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function ComponentPage({
     params: { component },
 }: {
     params: { component: string };
 }) {
-    const { Component, code } = components[component] || {};
+    const { Component, code, styles } = components[component] || {};
+    const languages = keys(code);
 
     if (!Component) {
         return (
@@ -20,17 +22,45 @@ export default function ComponentPage({
     }
 
     return (
-        <div className="flex flex-col justify-start items-stretch w-full min-h-screen">
-            <div className="w-full flex flex-col justify-center items-center h-96">
+        <div className="flex flex-col justify-start items-stretch w-full min-h-screen gap-6 px-12 py-8">
+            <div className="w-full flex flex-col justify-center items-center h-[500px]">
                 <Component />
             </div>
+            <Tabs defaultValue={languages[0]} className="">
+                <TabsList className="">
+                    {languages.map((language) => (
+                        <TabsTrigger
+                            value={language}
+                            key={language}
+                            className=""
+                        >
+                            {capitalize(language)}
+                        </TabsTrigger>
+                    ))}
+                </TabsList>
 
-            <div className="w-full flex flex-col justify-start items-stretch">
                 {keys(code).map((language) => (
-                    <CodeBlock language="jsx" key="language">
-                        {code[language]}
-                    </CodeBlock>
+                    <TabsContent
+                        value={language}
+                        className="flex flex-col justify-start items-stretch"
+                        key={language}
+                    >
+                        {keys(code[language]).map((fileType) => (
+                            <div
+                                className="w-full flex flex-col gap-2"
+                                key={fileType}
+                            >
+                                <CodeBlock language={fileType}>
+                                    {code[language][fileType]}
+                                </CodeBlock>
+                            </div>
+                        ))}
+                    </TabsContent>
                 ))}
+            </Tabs>
+            <div className="w-full flex flex-col gap-2">
+                <h2 className="text-2xl font-semibold">Styles</h2>
+                <CodeBlock language="scss">{styles}</CodeBlock>
             </div>
         </div>
     );

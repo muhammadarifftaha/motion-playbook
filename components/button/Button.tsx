@@ -1,24 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./Button.module.scss";
+import { cn } from "@/lib/utils";
 
 export default function Button() {
     const [effect, setEffect] = useState(false);
     return (
-        <div className="flex h-screen flex-col justify-center">
-            <div className="flex justify-center">
-                <button
-                    className={`${
-                        effect && styles.animateWiggle
-                    } bg-blue-500 p-4 text-white rounded hover:bg-blue-700 hover:shadow-xl`}
-                    onClick={() => {
-                        setEffect(true);
-                    }}
-                    onAnimationEnd={() => setEffect(false)}
-                >
-                    Wiggle wiggle...
-                </button>
-            </div>
-        </div>
+        <button
+            className={cn(effect && styles.animateWiggle, styles.button)}
+            onClick={() => {
+                setEffect(true);
+            }}
+            onAnimationEnd={() => setEffect(false)}
+        >
+            Wiggle wiggle...
+        </button>
     );
 }
